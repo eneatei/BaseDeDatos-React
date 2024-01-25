@@ -8,36 +8,33 @@ import './App.css'
 import { Buscador } from './componets/buscador/Buscador.jsx';
 
 function App() {
-const [colaboradores, setColaboradores] = useState(BaseColaboradores);
-// const [search, setSearch] = useState("")
+  const [colaboradores, setColaboradores] = useState(BaseColaboradores);
 
-const [alert, setAlert] = useState({
-  mensaje: "",
-  color: "",
-})
+  const [alert, setAlert] = useState({
+    mensaje: "",
+    color: "",
+  });
 
   return (
     <div className="mx-4">
       <h1 className="Text-start">Lista de colaboradores</h1>
       <Row>
-<Col sm={4}>
-<Buscador />
-</Col>
+        <Col sm={4}>
+          <Buscador />
+        </Col>
       </Row>
       <Row>
-<Col sm={12} md={9}>
-  <Listado colaboradores={colaboradores} />
-</Col>
-<Col md={3}>
-<h4>Agregar colaborador</h4>
-<Formulario setAlert={setAlert}
-setColaboradores={setColaboradores}
-colaboradores={colaboradores} />
-{alert.mensaje != "" && <Alerta mensaje={alert.mensaje} color={alert.color}/>}
-</Col>
+        <Col sm={12} md={9}>
+          <Listado colaboradores={colaboradores} />
+        </Col>
+        <Col md={3}>
+          <h4>Agregar colaborador</h4>
+          <Formulario setAlert={setAlert} setColaboradores={setColaboradores} colaboradores={colaboradores} />
+          {alert.mensaje !== "" && <Alerta mensaje={alert.mensaje} color={alert.color} />}
+        </Col>
       </Row>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
