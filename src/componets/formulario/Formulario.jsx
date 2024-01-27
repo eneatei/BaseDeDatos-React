@@ -36,6 +36,8 @@ setFormulario({
     setAlert({ mensaje: "", color: "" });}, 2000);
 };
 
+
+
 return (
 
 <Form onSubmit={handleOnSubmit}>

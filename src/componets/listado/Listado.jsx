@@ -1,6 +1,6 @@
 import { Table } from "react-bootstrap"
 
-export const Listado = ({ colaboradores }) => {
+export const Listado = ({ colaboradores, setColaboradores }) => {
 
 const renderTablaColaboradores = () => {
 return colaboradores.map((colaborador) => (
@@ -23,6 +23,7 @@ return (
           <th>Edad</th>
           <th>Cargo</th>
           <th>Teléfono</th>
+          {/* <th>Eliminar</th> */}
         </tr>
       </thead>
       <tbody>

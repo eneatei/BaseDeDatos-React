@@ -5,7 +5,6 @@ import { useState } from 'react';
 import { Formulario } from './componets/formulario/Formulario.jsx';
 import { Alerta } from './componets/alert/Alerta.jsx';
 import './App.css'
-import { Buscador } from './componets/buscador/Buscador.jsx';
 
 function App() {
   const [colaboradores, setColaboradores] = useState(BaseColaboradores);
@@ -20,7 +19,7 @@ function App() {
       <h1 className="Text-start">Lista de colaboradores</h1>
       <Row>
         <Col sm={4}>
-          <Buscador />
+       
         </Col>
       </Row>
       <Row>
