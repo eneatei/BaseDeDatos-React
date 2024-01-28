@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { v4 as uuidv4 } from 'uuid';
 
-export const Formulario = ({ setAlert, setColaboradores, colaboradores }) => {
+export const Formulario = ({ setAlert, setColaboradores, colaboradores, setFilterColaboradores }) => {
 const [formulario, setFormulario] = useState({
 nombre: "",
 correo: "",

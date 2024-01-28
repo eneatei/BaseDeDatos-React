@@ -24,7 +24,8 @@ function App() {
         <Col sm={4}>
           <Buscador
           colaboradores={colaboradores}
-          filterColaboradores={setFilterColaboradores}/>
+          filterColaboradores={setFilterColaboradores}
+          />
         </Col>
       </Row>
       <Row>

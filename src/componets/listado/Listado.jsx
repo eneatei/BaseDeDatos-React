@@ -8,22 +8,18 @@ export const Listado = ({ colaboradores, setColaboradores, filterColaboradores, 
     const nuevosColaboradores = colaboradores.filter((colaborador) => colaborador.id !== id);
     setColaboradores(nuevosColaboradores);
     setFilterColaboradores(nuevosColaboradores);
-  }
-
-  const renderTablaColaboradores = () => {
-    return filterColaboradores.map((colaborador) => ( // que sea filterColaboradores.map me evita que nuevos colaboradores se visualicen en la tabla
-      <tr key={colaborador.id}>
-        <td>{colaborador.nombre}</td>
-        <td>{colaborador.correo}</td>
-        <td>{colaborador.edad}</td>
-        <td>{colaborador.cargo}</td>
-        <td>{colaborador.telefono}</td>
-        <td>
-          <FontAwesomeIcon icon={faTrash} onClick={() => borrarColaborador(colaborador.id)} />
-        </td>
-      </tr>
-    ));
   };
+
+  const renderTablaColaboradores = filterColaboradores.map((colaborador) => (
+    <tr key={colaborador.id}>
+      <td>{colaborador.nombre}</td>
+      <td>{colaborador.correo}</td>
+      <td>{colaborador.edad}</td>
+      <td>{colaborador.cargo}</td>
+      <td>{colaborador.telefono}</td>
+      <td><FontAwesomeIcon icon={faTrash} onClick={() => borrarColaborador(colaborador.id)} /></td>
+    </tr>
+  ));
 
   return (
     <Table responsive striped bordered hover>
@@ -38,7 +34,7 @@ export const Listado = ({ colaboradores, setColaboradores, filterColaboradores, 
         </tr>
       </thead>
       <tbody>
-        {renderTablaColaboradores()}
+        {renderTablaColaboradores}
       </tbody>
     </Table>
   );
