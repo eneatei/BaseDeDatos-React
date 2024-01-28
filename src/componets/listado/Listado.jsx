@@ -1,17 +1,29 @@
 import { Table } from "react-bootstrap"
 
-export const Listado = ({ colaboradores, setColaboradores }) => {
+export const Listado = ({ colaboradores, setColaboradores, filterColaboradores, setFilterColaboradores }) => {
+
+
+const borrarColaborador = (id) => {
+  const nuevosColaboradores = colaboradores.filter((colaborador) => colaborador.id !== id);
+  setColaboradores(nuevosColaboradores);
+  setFilterColaboradores(nuevosColaboradores);
+}
 
 const renderTablaColaboradores = () => {
-return colaboradores.map((colaborador) => (
-  <tr key={colaborador.id}>
-    <td>{colaborador.nombre}</td>
-    <td>{colaborador.correo}</td>
-    <td>{colaborador.edad}</td>
-    <td>{colaborador.cargo}</td>
-    <td>{colaborador.telefono}</td>
+  return filterColaboradores.map((colaborador) => (
+    <tr key={colaborador.id}>
+      <td>{colaborador.nombre}</td>
+      <td>{colaborador.correo}</td>
+      <td>{colaborador.edad}</td>
+      <td>{colaborador.cargo}</td>
+      <td>{colaborador.telefono}</td>
+      <td>
+        <i className="fa-solid fa-trash-can"
+          onClick={() => borrarColaborador(colaborador.id)} ></i>
+      </td>
     </tr>
-  ))}
+  ));
+};
 
 
 return (
@@ -23,7 +35,7 @@ return (
           <th>Edad</th>
           <th>Cargo</th>
           <th>Teléfono</th>
-          {/* <th>Eliminar</th> */}
+        <th>Eliminar</th>
         </tr>
       </thead>
       <tbody>
@@ -31,4 +43,4 @@ return (
         </tbody>
     </Table>
   )
-}
+};

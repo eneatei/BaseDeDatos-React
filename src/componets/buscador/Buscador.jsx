@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
 import { Form } from "react-bootstrap";
 
-const Buscador = ({ colaboradores, setColaboradores }) => {
+const Buscador = ({ colaboradores, filterColaboradores }) => {
   const handleBuscador = (e) => {
+
     const buscador = e.target.value.toLowerCase();
 
-    const colaboradoresFiltrados = colaboradores.filter(
+    const resultadoBuscador = colaboradores.filter(
       (colaborador) =>
         colaborador.nombre.toLowerCase().includes(buscador) ||
         colaborador.correo.toLowerCase().includes(buscador) ||
@@ -14,15 +14,15 @@ const Buscador = ({ colaboradores, setColaboradores }) => {
         colaborador.telefono.includes(buscador)
     );
 
-    setColaboradores(colaboradoresFiltrados);
+    filterColaboradores(resultadoBuscador);
   };
 
   return (
     <Form className="mb-3">
     <Form.Control
       type="text"
+      name= "buscador"
       placeholder="Buscar colaborador..."
-      value={search}
       onChange={handleBuscador}
     />
   </Form>
