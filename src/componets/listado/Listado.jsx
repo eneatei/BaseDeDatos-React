@@ -11,7 +11,7 @@ export const Listado = ({ colaboradores, setColaboradores, filterColaboradores, 
   }
 
   const renderTablaColaboradores = () => {
-    return filterColaboradores.map((colaborador) => (
+    return filterColaboradores.map((colaborador) => ( // que sea filterColaboradores.map me evita que nuevos colaboradores se visualicen en la tabla
       <tr key={colaborador.id}>
         <td>{colaborador.nombre}</td>
         <td>{colaborador.correo}</td>
