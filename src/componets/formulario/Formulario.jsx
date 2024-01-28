@@ -23,6 +23,7 @@ setAlert({ mensaje: "Colaborador agregado", color: "success" });
 
 const nuevosColaboradores = {...formulario, id: uuidv4()}
 setColaboradores([...colaboradores, nuevosColaboradores]);
+setFilterColaboradores([...colaboradores, nuevosColaboradores])
 
 setFormulario({
     nombre: "",

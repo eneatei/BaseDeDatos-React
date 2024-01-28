@@ -42,7 +42,8 @@ function App() {
           <Formulario
           setAlert={setAlert}
           setColaboradores={setColaboradores}
-          colaboradores={colaboradores}/>
+          colaboradores={colaboradores}
+          setFilterColaboradores={setFilterColaboradores}/>
           {alert.mensaje !== "" && <Alerta mensaje={alert.mensaje} color={alert.color} />}
         </Col>
       </Row>
